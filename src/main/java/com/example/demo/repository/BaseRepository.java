@@ -6,7 +6,7 @@ public interface BaseRepository<T> {
 
     List<T> findAll();
 
-    List<T> findTop();
+    T findById(int id);
 
     T save(T t);
 }

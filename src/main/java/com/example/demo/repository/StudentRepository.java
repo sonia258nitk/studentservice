@@ -3,7 +3,6 @@ package com.example.demo.repository;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -31,17 +30,12 @@ public class StudentRepository implements BaseRepository<Student> {
         return studentsList;
     }
 
+
 	@Override
-	public List<Student> findTop() {
-		/*
-		 * List<Student> topSstudents = studentsList.stream() .filter(student ->
-		 * student.getSubjects().stream().filter(subject ->
-		 * subject.getSubjectName().equalsIgnoreCase("English")).filter(s ->
-		 * s.getMark()>75)) .collect(Collectors.toList()));
-		 */
-		
-		return studentsList;
+	public Student findById(int id) {
+		return studentsList.stream().filter(s -> s.getId()==id).findFirst().get();
 	}
+
 
 	@Override
 	public Student save(Student student) {

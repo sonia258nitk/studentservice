@@ -7,9 +7,11 @@ import java.util.Optional;
 
 public interface StudentService {
 
-    Optional<Student> save(Student request);
+    Student save(Student request);
 
     List<Student> findAll();
 
     List<Student> findTop();
+
+	Student findById(int id);
 }
